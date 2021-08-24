@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Infineon.Yoda">
+      <HintPath>libs\Yoda\Infineon.Yoda.dll</HintPath>
+    </Reference>
+    <Reference Include="TIBCO.Rendezvous">
+      <HintPath>libs\Tibco\windows\TIBCO.Rendezvous.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
