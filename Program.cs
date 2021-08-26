@@ -23,14 +23,26 @@ namespace YodaApp
             message.Add("Application", "Infineon Cloud Platform");
             message.Add("Message", "Hello World");
 
-            while (true)
-            {
-                Publish(message, yodaChannel, remotePath, hostType, subject, 10);
-                Console.WriteLine("Message sent to: " + subject);
-                //i++;
-                //Console.WriteLine(i + ": Hello World!");
-                Thread.Sleep(2000);
-            }
+            
+
+                while (true)
+                {
+                try
+                {
+                    Publish(message, yodaChannel, remotePath, hostType, subject, 10);
+                    Console.WriteLine("Message sent to: " + subject);
+                    //i++;
+                    //Console.WriteLine(i + ": Hello World!");
+                    Thread.Sleep(2000);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(e.StackTrace);
+
+                }
+                }
+            
         }
 
         public static void Publish(IfxDoc message, String yodaChannel, String remotePath, String hostType, String subject, int timeout)
